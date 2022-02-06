@@ -5,6 +5,7 @@ chardet==4.0.0
 click==7.1.2
 Cython==0.29.22
 dataclasses==0.6
+editdistance==0.6.0
 fairseq==0.10.0
 filelock==3.0.12
 Flask==1.1.2

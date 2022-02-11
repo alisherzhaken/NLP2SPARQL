@@ -149,7 +149,7 @@ def set_seed(seed=42):
     os.environ['PYHTONHASHSEED'] = str(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
+    #torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
 
 
@@ -250,7 +250,7 @@ def main():
         args.n_gpu = 1
     logger.warning("Process rank: %s, device: %s, n_gpu: %s, distributed training: %s",
                    args.local_rank, device, args.n_gpu, bool(args.local_rank != -1))
-    args.device = device
+    args.device = torch.device("cpu")
     # Set seed
     set_seed(args.seed)
     # make dir if output_dir not exist
